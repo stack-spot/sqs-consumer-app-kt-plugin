@@ -1,0 +1,26 @@
+name: "sqs-consumer-app-kt-plugin"
+description: Plugin to configure sqs consumer
+types: 
+  - app
+tags:
+  - sqs
+  - consumer
+inputs:
+  - label: "SQS Message Deletion Policy: "
+    type: text
+    name: "sqs_message_deletion_policy"
+    items:
+      - "ALWAYS"
+      - "NEVER"
+      - "NO_REDRIVE"
+      - "ON_SUCCESS"
+    default: "ON_SUCCESS"
+
+  - label: "AWS region: "
+    type: text
+    name: "aws_region"
+    default: "us-east-1"
+  
+  - label: "Consumer Queue url: "
+    type: text
+    name: "sqs_consumer_queue_url"
