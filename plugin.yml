@@ -36,6 +36,6 @@ hooks:
       - search:
           string: 'val accountRole ='
           insert-after:
-            value: "        sqsConsumerNestedStack.queue.grantConsumeMessages(accountRole)"
+            value: "        sqsConsumerNestedStack.queue.grantConsumeMessages(accountRole)\n"
           when:
             not-exists: "sqsConsumerNestedStack.queue.grantConsumeMessages(accountRole)"
