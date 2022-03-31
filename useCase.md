@@ -1,0 +1,6 @@
+### **Como o plugin funciona** 
+
+ Ao aplicar o plugin, serão adicionados os recursos necessários para que seja possível provisionar a infraestrutura do SQS via CDK na cloud, além de configurar um listener de SQS na aplicação e as suas dependências necessárias.
+  - **Infraestrutura:** Utilizando CDK o plugin entrega uma [NestedStack](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.NestedStack.html) que provisiona na Cloud da AWS a criação da fila informada.
+  - **App:** Como facilitador, o plugin entrega uma classe definida como um serviço (@Service), que contém um `listener` já preparado para consumir os dados da fila informada via `input`, porém o desenvolvedor tem total liberdade para customizar essa classe e listener conforme sua necessidade. Para mais informações sobre esse recurso acesse [stackspot - SqsConsumer.kt](https://github.com/stack-spot/sqs-consumer-app-kt-plugin/blob/main/templates/app/src/main/kotlin/group_id_folder/consumer/SqsConsumer.kt).
+Para que o desenvolvedor possa realizar testes na própria máquina, o plugin também configura um serviço de SQS, no Docker Compose da aplicação, através do [LocalStack](https://docs.localstack.cloud/overview/). Para alterar o tipo de fila que será criada, basta alterar o script "sqs-init.sh" disponibilizado pelo plugin.
