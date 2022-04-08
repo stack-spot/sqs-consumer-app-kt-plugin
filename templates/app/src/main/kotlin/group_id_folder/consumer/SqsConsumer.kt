@@ -12,6 +12,6 @@ class SqsConsumer {
 
     @SqsListener(value = ["\${sqs.queue.consume}"], deletionPolicy = SqsMessageDeletionPolicy.{{inputs.sqs_message_deletion_policy}})
     fun consume(data: String) {
-        logger.info{ "Received: $data" }
+        logger.info { "Received: $data" }
     }
 }
